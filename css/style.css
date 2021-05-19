@@ -45,6 +45,10 @@ a:visited {
 
 }
 
+input {
+
+}
+
 
 
 /* Style the button used to pause/play the video */
@@ -65,7 +69,11 @@ a:visited {
   color: black;
 }
 
-div {
+#divider {
   padding-left: 50px;
   width: 400px;
+}
+
+input {
+  font-family: 'Jura', sans-serif;
 }

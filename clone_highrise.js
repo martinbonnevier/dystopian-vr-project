@@ -24,9 +24,9 @@ AFRAME.registerComponent('clone_highrise', {
       const fabric2El = document.getElementById('model_fabric2');
       const soundEl = document.querySelector('.sound_hr');
       let clone = {};
-     console.log('hatt')
+     
 
-      // console.log('yyyyyyyyyyyyyyyyyy ' + typeof(clone)) 
+      // console.log('yyyyyyyyyyyyyyyyyy ' + typeof(clone))
       // const clone = highRiseEl.cloneNode();
       // const cloneSound = soundEl.cloneNode();
       // console.log(soundEl)

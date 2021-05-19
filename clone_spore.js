@@ -9,7 +9,7 @@ AFRAME.registerComponent('clone_spore', {
       return {
         
         x:  Math.floor(Math.random() * (max - min + 1)) + min,
-        y: 3,
+        y: 1000,
         z: Math.floor(Math.random() * (max - min + 1)) + min
       };
     }
