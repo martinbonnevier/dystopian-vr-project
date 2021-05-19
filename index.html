@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div class="grid-container">
+  <!-- The video -->
+  <video autoplay muted id="myVideo">
+  
+  <source src="/assets/video/dancers_.mp4" type="video/mp4">
+</video>
+<audio src="/assets/sounds/ickmon.mp3" autoplay loop="true"></audio>
+<!-- Optional: some overlay text to describe the video -->
+<div class="content">
+<div>
+  <h1>Dystopian VR Project</h1>
+  <form action="/vr.html">
+    <label for="buildings">Number of buildings (max 200)</label><br>
+    <input type="text" id="buildings" name="buildings" value="200"><br>
+    <label for="balls">Number of balls (max 400)</label><br>
+    <input type="text" id="balls" name="balls" value="400"><br><br>
+    <input type="submit" value="Submit" id="myBtn">
+  </form>
+  <!-- Use a button to pause/play the video with JavaScript -->
+  <button id="myBtn" onclick="playPauseFunction()">Pause</button>
+</div>
+<div>
+  <p>&copy; Martin Bonnevier & <a href="https://lnu.se/">LNU</a>
+  </p>
+  <p>Made with <a href="https://aframe.io/">A-frame</a></p>
+  <p>All models, sounds and music by Martin Bonnevier.</p>
+</div>
+</div>
+
+
+
+
+<script>
+  // Get the video
+  var video = document.getElementById("myVideo");
+
+  // Get the button
+  var btn = document.getElementById("myBtn");
+  video.addEventListener('ended', (event) => {
+  console.log('hatt');
+  video.play();
+});
+  // Pause and play the video, and change the button text
+  function playPauseFunction() {
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play";
+    }
+  }
+
+
+
+  </script>
+</div>
+ 
+</body>
+</html>
+
+
+
+
+
