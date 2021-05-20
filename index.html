@@ -13,14 +13,16 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="grid-container">
+
   <!-- The video -->
   <video autoplay muted id="myVideo">
   
   <source src="/assets/video/dancers_.mp4" type="video/mp4">
 </video>
-<iframe src="/assets/sounds/silence.mp3" allow="autoplay" id="audio"></iframe>
-<audio src="/assets/sounds/ickmon.mp3" autoplay loop="true" controls></audio>
+<div class="audiocontrols">
+  <iframe src="/assets/sounds/silence.mp3" allow="autoplay" id="audio"></iframe><br>
+  <audio src="/assets/sounds/ickmon.mp3" autoplay loop="true" controls></audio>
+</div>
 <!-- Optional: some overlay text to describe the video -->
 <div class="content">
 <div id="divider">
@@ -33,10 +35,10 @@
     <input type="submit" value="Submit" id="myBtn">
   </form>
   <!-- Use a button to pause/play the video with JavaScript -->
-  <button id="myBtn" onclick="playPauseFunction()">Pause</button>
+  <button id="myBtn" onclick="playPauseFunction()">Pause video</button>
 </div>
 <div id="divider">
-  <p>&copy; Martin Bonnevier & <a href="https://lnu.se/">LNU</a>
+  <p>&copy; <a href="https://lnu.se/">LNU</a> & Martin Bonnevier
   </p>
   <p>Made with <a href="https://aframe.io/">A-frame</a></p>
   <p>All models, sounds and music by Martin Bonnevier.</p>
