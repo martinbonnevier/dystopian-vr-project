@@ -10,14 +10,14 @@ p, label {
 }
 a {
   font-family: 'Jura', sans-serif;
-  color: #e30b5d;
+  color:  orange;
   text-decoration: none;
 }
 a:hover {
-  color: orange;
+  color: #e30b5d;
 }
 a:visited {
-  color: e30b5d;
+  color: orange;
 }
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
@@ -76,4 +76,20 @@ input {
 
 input {
   font-family: 'Jura', sans-serif;
+}
+audiocontrols{
+  display: flex;
+  position: absolute;
+  left: 200px;
+  width: 50px;
+  padding: 20px;
+  margin: 200px;
+}
+audio {
+  margin: 20px;
+}
+
+#audio {
+  visibility: hidden;
+  height: 0px;
 }
