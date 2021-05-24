@@ -41,7 +41,7 @@
   <p>&copy; <a href="https://lnu.se/">LNU</a> & Martin Bonnevier
   </p>
   <p>Made with <a href="https://aframe.io/">A-frame</a></p>
-  <p>All models, sounds and music by Martin Bonnevier.</p>
+  <p>All models, sounds, videos and music by Martin Bonnevier.</p>
 </div>
 </div>
 
@@ -56,6 +56,7 @@
   var btn = document.getElementById("myBtn");
   video.addEventListener('ended', (event) => {
   console.log('hatt');
+      btn.innerHTML = "Play";
   video.play();
 });
   // Pause and play the video, and change the button text

@@ -20,7 +20,7 @@ AFRAME.registerComponent('distance_to_sound', {
     // console.log(this.el.object3D.position)
     for(let i = 0; i < soundSources.length; i++){
       // console.log(soundSources[i]) 
-      if((camera.object3D.position.distanceTo(soundSources[i].object3D.position) > 20)){
+      if((camera.object3D.position.distanceTo(soundSources[i].object3D.position) > 60)){
         
         soundSources[i].components.sound.pause();
         // console.log('kisskaka' + soundSources[i].id + camera.object3D.position.distanceTo(soundSources[i].object3D.position))

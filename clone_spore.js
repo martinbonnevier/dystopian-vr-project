@@ -28,7 +28,7 @@ AFRAME.registerComponent('clone_spore', {
       // console.log(clone)
       // console.log('öööö')
       clone.setAttribute("dynamic-body", "")
-      clone.setAttribute("position", randomPosition(500, -500))
+      clone.setAttribute("position", randomPosition(800, -800))
       clone.setAttribute("radius", randomRadius())
       clone.addEventListener('mousedown', () => {
     
@@ -39,13 +39,15 @@ AFRAME.registerComponent('clone_spore', {
         
 
       });
-      sceneEl.appendChild(clone);
+      setTimeout(() => {  sceneEl.appendChild(clone); }, 3000);
+      // sceneEl.appendChild(clone);
  
     }
-    
+    // setTimeout(() => {  console.log("World!"); }, 2000);
     for(let i=0 ; i<nrOfBalls; i++){
       // console.log(i);
-      createSpore()
+  
+      createSpore();
     }
 
   },

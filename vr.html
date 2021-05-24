@@ -30,8 +30,8 @@
 
 <body>
   
-  <hatt id="nr_of_buildings"></hatt>
-  <hatt id="nr_of_balls"></hatt>
+  <nr_placeholder id="nr_of_buildings"></nr_placeholder>
+  <nr_placeholder id="nr_of_balls"></nr_placeholder>
   <!-- fog="type: linear; color: #301934; near: 600" -->
   <a-scene stats loading-screen="dotsColor: #e30b5d; backgroundColor: black" distance_to_sound clone_highrise  clone_spore  print_colission physics="debug: false; gravity: -9.8"
     gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/">
@@ -40,6 +40,9 @@
       <a-asset-item src="/assets/terrain/footsteps.gltf" id="plane"></a-asset-item>
       <!-- Sky -->
       <img src="/assets/img/milky_way_lemur.jpg" alt="Milky way, sky image" id="sky">
+      <!-- Videos -->
+      <video id="red_crawler" autoplay loop="true" src="/assets/video/red_.mp4"></video>
+      
       <!-- Sounds -->
       <audio src="/assets/sounds/ouch.wav" id="ouch" class="sound" poolSize="5"></audio>
       <audio src="/assets/sounds/ting.wav" id="ting" class="sound" poolSize="5"></audio>
@@ -48,6 +51,10 @@
       <audio src="/assets/sounds/whale_octavised.mp3" id="whale" class="sound" poolSize="5" ></audio>
       <audio src="/assets/sounds/japanese.mp3" id="dodi_speech" class="sound" poolSize="1" ></audio>
       <audio src="/assets/sounds/wind.mp3" id="wind" class="sound"></audio>
+      <audio src="/assets/sounds/cats_and_cockroahes.mp3" id="cats" class="sound"></audio>
+      <audio src="/assets/sounds/ickmon.mp3" id="ickmon" class="sound"></audio>
+      <audio src="/assets/sounds/Tansky.mp3" id="tansky" class="sound"></audio>
+      <audio src="/assets/sounds/cmon.mp3" id="cmon" class="sound"></audio>
       <audio src="/assets/sounds/klick.wav" id="klick"></audio>
       <!-- 3d-models -->
       <a-asset-item src="/assets/3d-models/sphere.gltf" id="cave"></a-asset-item>
@@ -55,6 +62,7 @@
       <a-asset-item src="/assets/3d-models/ickmon_gold_.glb" id="dodi"></a-asset-item>
       <a-asset-item src="/assets/3d-models/meteor.gltf" id="meteor"></a-asset-item>
       <a-asset-item src="/assets/3d-models/old_robo.gltf" id="crawler"></a-asset-item>
+      <a-asset-item src="/assets/3d-models/Walking (2).fbx.glb" id="walker"></a-asset-item>
       <!-- <a-asset-item src="/assets/3d-models/robo_drunk.glb" id="drunk"></a-asset-item> -->
       <a-asset-item src="/assets/3d-models/lava_comp2.gltf" id="swimmer"></a-asset-item>
       <a-asset-item src="/assets/3d-models/swimmer_feather.gltf" id="swimmer2"></a-asset-item>
@@ -102,8 +110,6 @@
       <img src="/assets/img/Facade014_1K-JPG (1)/Facade014_1K_Roughness.jpg" alt="" id="facade_roughness">
       <!-- Mixins -->
 
-
-
       <a-mixin id="sphere" dynamic-body="" hoverable="" grabbable="" geometry="primitive: sphere; radius: 0.2">
       </a-mixin>
 
@@ -126,7 +132,7 @@
       <a-mixin id="highrise_fabric2" static-body material="src: #fabric2_texture; repeat: 1 12;  normalMap: #fabric2_normal; normalTextureRepeat: 1 12; normalScale: 3 3; ambientOcclusionMap: #fabric2_ao; ambientOcclusionTextureRepeat: 1 12;"></a-mixin>
     
     </a-assets>
-    <a-entity id="cameraRig" movement-controls="speed: 1" kinematic-body rotation="0 -270 0" width="1000" height="1000" position="700 0 0">
+    <a-entity id="cameraRig" movement-controls="speed: 10" kinematic-body rotation="0 -270 0" width="1000" height="1000" position="700 0 0">
       <a-entity id="head" camera position="0 3.6 0" look-controls="pointerLockEnabled: true">
 
         <a-sound src="#wind" autoplay="true"
@@ -176,7 +182,7 @@
     <!-- <a-sphere radius="20" position="30 100 50" static-body material="src: #highrise_emissive; repeat: 1 1; displacemenMap: #highrise_height; displacementTextureRepeat: 1 1; displacementScale:8; normalMap: #highrise_normal; normalTextureRepeat: 1 1; ambientOcclusionMap: #highrise_ao; ambientOcclusionTextureRepeat: 1 1; emissive: grey; emissiveIntensity: 0.3"> </a-sphere> -->
 
 <!-- Sky -->   
-<a-sky src="#sky" radius="1000"></a-sky>
+<a-sky src="#sky" radius="2000" ></a-sky>
 <a-entity>
 
   <a-gltf-model scale="0.5 0.5 0.5" src="#meteor" material="metalness: 0.8; roughness: 0.5; color: #ede4e4" position="0 400 0"
@@ -188,12 +194,18 @@
 
 <a-box mixin="highrise" height="100" width="20" depth="20" position="50 50 50"></a-box>
 
-<a-sound src="#am" id="bg_sound2" position="50 0 50" autoplay="true" loop="true" distanceModel="linear" ></a-sound>
-  <a-box id="model_bricks" mixin="highrise_bricks" height="100" width="20" depth="20" position="-50 50 50" class="building"></a-box>
+  <a-sound src="#am" id="bg_sound2" position="50 0 50" autoplay="true" loop="true" distanceModel="linear" refDistance="15"></a-sound>
+  <a-box id="model_bricks" mixin="highrise_bricks" height="100" width="20" depth="20" position="-50 50 50" class="building" ></a-box>
+  <a-sound src="#cats" id="bg_sound2" position="150 0 0" autoplay="true" loop="true" distanceModel="linear" ></a-sound>
   <a-box id="model_fabric" mixin="highrise_fabric" height="100" width="20" depth="20" position="150 50 0" class="building"></a-box>
-  <a-box id="model_fabric2" mixin="highrise_fabric2" height="100" width="20" depth="20" position="50 50 0" class="building"></a-box>
-  <a-box id="model_hr" mixin="highrise" height="100" width="20" depth="20" position="150 50 0" class="building"></a-box>
-  <a-sound id="bg_sound2" class="sound_hr" src="#morse" autoplay="true" loop="true" distanceModel="linear" ></a-sound>
+  <a-video src="#red_crawler" position="260.2 30 0" rotation="0 90 0" width="16" height="9"></a-video>
+  <a-sound src="#ickmon" id="bg_sound2" position="250 0 0" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
+  <a-box id="model_fabric2" mixin="highrise_fabric2" height="100" width="20" depth="20" position="250 50 0" class="building"></a-box>
+  <a-sound src="#tansky" id="bg_sound2" position="-150 0 0" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
+  <a-box id="model_hr" mixin="highrise" height="100" width="20" depth="20" position="-150 50 0" class="building"></a-box>
+  <a-sound src="#cmon" id="bg_sound2" position="-450 0 450" autoplay="true" loop="true" distanceModel="linear" refDistance="15"></a-sound>
+  <a-box id="model_bricks" mixin="highrise_bricks" height="100" width="20" depth="20" position="-450 50 450" class="building" ></a-box>
+  <a-sound id="bg_sound2" class="sound_hr" src="#morse" autoplay="true" loop="true" distanceModel="linear" refDistance="15"></a-sound>
  
   <a-entity position="650 0 0">
     <a-cylinder static-body radius="2" height="1000" material="transparent: true; opacity: 0.1"></a-cylinder>
@@ -215,6 +227,7 @@
     <a-entity alongpath="curve: #track; loop: true; rotate: true; dur: 200000">
       <!-- <a-cylinder height="30" radius="100" static-body></a-cylinder> -->
       <a-entity gltf-model="#crawler" animation-mixer scale="2 2 2" visible="true" static-body></a-entity>
+      <a-entity gltf-model="#walker" animation-mixer scale="0.1 0.1 0.1" visible="true" position="0 0 300" static-body></a-entity>
     </a-entity>
 
     <a-entity alongpath="curve: #track; loop: true; rotate: true; dur: 200000">
