@@ -69,6 +69,8 @@
       <a-asset-item src="/assets/3d-models/flying.gltf" id="flyer"></a-asset-item>
       <!-- <a-asset-item src="/assets/3d-models/runner.gltf" id="runner"></a-asset-item> -->
       <!-- Textures -->
+      <img src="/assets/img/grid.png" alt="" id="grid" transparent="true">
+
       <img src="/assets/img/fabric2/TexturesCom_SciFiFabric02_512_albedo.png" id="fabric2_texture">
       <img src="/assets/img/fabric2/TexturesCom_SciFiFabric02_512_normal.png" id="fabric2_normal">
       <img src="/assets/img/fabric2/TexturesCom_SciFiFabric02_512_ao.png" id="fabric2_ao">
@@ -171,9 +173,11 @@
     <a-entity mixin="cube" position="1 1 -1" material="color: yellow" sleepy
       collision-filter="group: blue; collidesWith: default, hands">
     </a-entity>
-    <a-gltf-model src="#plane" scale="10 10 10" shadow></a-gltf-model>
-    <a-plane  width="10000" height="10000" rotation="-90 0 0" position="0 0.2 0" static-body
-      collision-filter="collidesWith: blue, seed" physics-collider visible="false" id="ground"></a-plane>
+    <!-- <a-gltf-model src="#plane" scale="10 10 10" shadow></a-gltf-model> -->
+    <a-plane src="#grid" repeat="1000 1000" scale="1 1" transparent="true" opacity="0.9"  width="10000" height="10000" rotation="-90 0 0" position="0 0.2 0" static-body
+      collision-filter="collidesWith: blue, seed" physics-collider visible="true" id="ground"></a-plane>
+      <a-entity  rotation="-90 0 0"></a-entity>
+      <a-image ></a-image>
       <!-- <a-sphere material="displacementMap: #plane_height" width="10" height="10" depth="10"></a-sphere>  -->
 
       <!-- material="src: #plane_texture; repeat: 100 100; displacementMap: #plane_height; displacementTextureRepeat: 100 100; normalMap: #plane_normal; normalTextureRepeat: 100 100;  ambientOcclusionMap: #plane_ao; ambientOcclusionTextureRepeat: 100 100" -->
