@@ -39,8 +39,8 @@ AFRAME.registerComponent('clone_spore', {
         
 
       });
-      setTimeout(() => {  sceneEl.appendChild(clone); }, 3000);
-      // sceneEl.appendChild(clone);
+      // setTimeout(() => {  sceneEl.appendChild(clone); }, 3000);
+      sceneEl.appendChild(clone);
  
     }
     // setTimeout(() => {  console.log("World!"); }, 2000);
