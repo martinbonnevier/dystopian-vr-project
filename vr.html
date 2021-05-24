@@ -62,7 +62,7 @@
       <a-asset-item src="/assets/3d-models/ickmon_gold_.glb" id="dodi"></a-asset-item>
       <a-asset-item src="/assets/3d-models/meteor.gltf" id="meteor"></a-asset-item>
       <a-asset-item src="/assets/3d-models/old_robo.gltf" id="crawler"></a-asset-item>
-      <a-asset-item src="/assets/3d-models/Walking (2).fbx.glb" id="walker"></a-asset-item>
+      <!-- <a-asset-item src="/assets/3d-models/Walking (2).fbx.glb" id="walker"></a-asset-item> -->
       <!-- <a-asset-item src="/assets/3d-models/robo_drunk.glb" id="drunk"></a-asset-item> -->
       <a-asset-item src="/assets/3d-models/lava_comp2.gltf" id="swimmer"></a-asset-item>
       <a-asset-item src="/assets/3d-models/swimmer_feather.gltf" id="swimmer2"></a-asset-item>
@@ -132,7 +132,7 @@
       <a-mixin id="highrise_fabric2" static-body material="src: #fabric2_texture; repeat: 1 12;  normalMap: #fabric2_normal; normalTextureRepeat: 1 12; normalScale: 3 3; ambientOcclusionMap: #fabric2_ao; ambientOcclusionTextureRepeat: 1 12;"></a-mixin>
     
     </a-assets>
-    <a-entity id="cameraRig" movement-controls="speed: 10" kinematic-body rotation="0 -270 0" width="1000" height="1000" position="700 0 0">
+    <a-entity id="cameraRig" movement-controls="speed: 2" kinematic-body rotation="0 -270 0" width="1000" height="1000" position="800 0 0">
       <a-entity id="head" camera position="0 3.6 0" look-controls="pointerLockEnabled: true">
 
         <a-sound src="#wind" autoplay="true"
@@ -227,7 +227,7 @@
     <a-entity alongpath="curve: #track; loop: true; rotate: true; dur: 200000">
       <!-- <a-cylinder height="30" radius="100" static-body></a-cylinder> -->
       <a-entity gltf-model="#crawler" animation-mixer scale="2 2 2" visible="true" static-body></a-entity>
-      <a-entity gltf-model="#walker" animation-mixer scale="0.1 0.1 0.1" visible="true" position="0 0 300" static-body></a-entity>
+      <!-- <a-entity gltf-model="#walker" animation-mixer scale="0.1 0.1 0.1" visible="true" position="0 0 300" static-body></a-entity> -->
     </a-entity>
 
     <a-entity alongpath="curve: #track; loop: true; rotate: true; dur: 200000">
