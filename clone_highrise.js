@@ -46,8 +46,7 @@ AFRAME.registerComponent('clone_highrise', {
       }
       else if(counter === 3){
         clone = brickEl.cloneNode();
-        console.log('ööööööööööööööö')
-        console.log(clone)
+
 
       }
       else if(counter===4){
