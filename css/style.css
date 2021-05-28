@@ -45,8 +45,9 @@ a:visited {
 
 }
 
-input {
-
+h1 {
+  font-family: 'Jura', sans-serif;
+  color: whitesmoke;
 }
 
 
