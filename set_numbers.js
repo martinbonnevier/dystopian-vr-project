@@ -4,8 +4,8 @@ AFRAME.registerComponent('set_nr', {
  // Parse number of buildings and balls from form on index.html. Also checks if entered values are numbers and in the specified range.
       const url = document.URL;    
       const sub = url.substr(url.indexOf('=')+1, url.length);
-      const nrOfBuildings = sub.substr(0, sub.indexOf('balls')-1);
-      const nrOfBalls = sub.substr(sub.indexOf('=')+1, sub.length)
+      let nrOfBuildings = sub.substr(0, sub.indexOf('balls')-1);
+      let nrOfBalls = sub.substr(sub.indexOf('=')+1, sub.length)
       if(Number.isNaN(parseInt(nrOfBuildings)) || parseInt(nrOfBuildings) > 200 || parseInt(nrOfBuildings) < 1){
         nrOfBuildings = 200;
       }

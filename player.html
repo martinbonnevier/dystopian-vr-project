@@ -1,0 +1,47 @@
+<!-- The music player is made by Hector Polanco: https://github.com/hecpolanco/Simple-Music-Player -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="/css/player.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="back"><a href="/index.html">Back to start page.</a></div>
+    
+    <img src="/assets/player_assets/images/1.png" id="background" />
+    <audio src="/assets/player_assets/music/eyno.mp3" id="song"></audio>
+
+    <div class="container">  
+        <div class="box"></div>      
+        <img src="/assets/player_assets/images/1.png" id="thumbnail" />
+        
+        <img src="/assets/player_assets/icons/play.png" onclick="playPause()" id="play-pause" />
+        <img src="/assets/player_assets/icons/forward.png" onclick="nextSong()" id="next-song" />
+        <img src="/assets/player_assets/icons/backward.png" onclick="previousSong()" id="previous-song" />
+
+        <div class="song-artist">Martin Bonnevier</div>
+        <div class="song-title">eyno</div>
+
+        <!-- Input element for progress bar - min=0 starting value of every song - max length will change per song so leave empty -->
+        
+        <input 
+            type="range" 
+            id="progress-bar" 
+            min="0" 
+            max="" 
+            value="0" 
+            onchange="changeProgressBar()"
+        />
+
+        <div class="currentTime"></div>
+        <div class="durationTime"></div>
+    </div>
+
+    <script src="/assets/player_assets/player.js"></script>
+    <div id="credits"><a href="https://github.com/hecpolanco/Simple-Music-Player">Player made by Hector Polanco.</a></div>
+</body>
+</html>

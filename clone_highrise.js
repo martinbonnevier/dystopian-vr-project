@@ -16,7 +16,6 @@ AFRAME.registerComponent('clone_highrise', {
 
 
     function createHighRise(counter){
-      // console.log(counter)
       const sceneEl = document.querySelector('a-scene');
       const highRiseEl = document.getElementById('model_hr');
       const brickEl = document.getElementById('model_bricks');
@@ -24,65 +23,32 @@ AFRAME.registerComponent('clone_highrise', {
       const fabric2El = document.getElementById('model_fabric2');
       const soundEl = document.querySelector('.sound_hr');
       let clone = {};
-     
+          
+      const randomPos = randomPosition(600, -600)
 
-      // console.log('yyyyyyyyyyyyyyyyyy ' + typeof(clone))
-      // const clone = highRiseEl.cloneNode();
-      // const cloneSound = soundEl.cloneNode();
-      // console.log(soundEl)
-      const randomPos = randomPosition(500, -500)
-      // console.log(randomPos)
-      // console.log(clone)
-      // console.log('öööö')
-      // const randomPosition = randomPosition();
       if(counter === 1){
-        // console.log('even!!!!!!!!!!!!!!!')
         clone = highRiseEl.cloneNode();
-
       }
       else if (counter === 2){
         clone = fabricEl.cloneNode();
-
       }
       else if(counter === 3){
         clone = brickEl.cloneNode();
-
-
       }
       else if(counter===4){
         clone = fabric2El.cloneNode();
-
       }
       clone.setAttribute("static-body", "");
       clone.setAttribute("position", randomPos);
-      // cloneSound.setAttribute("position", randomPos);
-      // cloneSound.setAttribute("id", "bg_sound2")
-      //console.log(clone.getAttribute(position))
       sceneEl.appendChild(clone); 
-      // sceneEl.appendChild(cloneSound); 
     }
     
     for(let i=0 ; i<nrOfBuildings; i++){
       
       for(let j = 1; j < 5; j++){
         createHighRise(j)
-      }
- 
+      } 
     }
-
-
-  },
-
-  update: function () {
-    // Do something when component's data is updated.
-  },
-
-  remove: function () {
-    // Do something the component or its entity is detached.
-  },
-
-  tick: function (time, timeDelta) {
-    // Do something on every scene tick or frame.
   }
 });
 

@@ -10,20 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>Dystopian VR Project</title>
 </head>
 <body>
 
   <!-- The video -->
-  <video autoplay muted id="myVideo">
-  
-  <source src="/assets/video/dancers_.mp4" type="video/mp4">
+  <video autoplay muted id="myVideo" source src="/assets/video/dancers_.mp4" type="video/mp4">
 </video>
-<div class="audiocontrols">
-  <iframe src="/assets/sounds/silence.mp3" allow="autoplay" id="audio"></iframe><br>
-  <audio src="/assets/sounds/ickmon.mp3" autoplay loop="true" controls></audio>
-</div>
-<!-- Optional: some overlay text to describe the video -->
+
+
 <div class="content">
 <div id="divider">
   <h1>Dystopian VR Project</h1>
@@ -42,6 +37,15 @@
   </p>
   <p>Made with <a href="https://aframe.io/">A-frame</a></p>
   <p>All models, sounds, videos and music by Martin Bonnevier.</p>
+
+  <div class="audiocontrols">
+  
+    <audio src="/assets/sounds/eyno_44100.mp3" loop="true" controls></audio>
+  
+  </div>
+  
+  <a href="/player.html">Listen to all the songs from the project.</a>
+
 </div>
 </div>
 
@@ -55,7 +59,7 @@
   // Get the button
   var btn = document.getElementById("myBtn");
   video.addEventListener('ended', (event) => {
-  console.log('hatt');
+
       btn.innerHTML = "Play";
   video.play();
 });
