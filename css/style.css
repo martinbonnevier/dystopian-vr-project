@@ -14,11 +14,9 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #e30b5d;
+  color: whitesmoke;
 }
-a:visited {
-  color: orange;
-}
+
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
 
