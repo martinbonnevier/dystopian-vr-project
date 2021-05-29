@@ -70,7 +70,7 @@
       <a-asset-item src="/assets/3d-models/old_robo.gltf" id="crawler"></a-asset-item>      
       <a-asset-item src="/assets/3d-models/flying.gltf" id="swimmer"></a-asset-item>
       <a-asset-item src="/assets/3d-models/swimmer_feather.gltf" id="swimmer2"></a-asset-item>
-      <a-asset-item src="/assets/3d-models/birdie.gltf" id="swimmer3"></a-asset-item>
+
       <a-asset-item src="/assets/3d-models/lava_.gltf" id="lava"></a-asset-item>
       <!-- Textures -->
       <img src="/assets/img/grid.png" alt="" id="grid" transparent="true">
@@ -83,6 +83,11 @@
       <img src="/assets/img/fabric/TexturesCom_SciFiFabric06_512_normal.jpg" alt="" id="fabric_normal">
       <img src="/assets/img/fabric/TexturesCom_SciFiFabric06_512_roughness.jpg" alt="" id="fabric_roughness">
       <img src="/assets/img/fabric/TexturesCom_SciFiFabric06_512_ao.jpg" alt="" id="fabric_ao">
+
+      <img src="/assets/img/fabric3/TexturesCom_SciFiFabric07_512_albedo.jpg" id="fabric3_texture" alt="">
+      <img src="/assets/img/fabric3/TexturesCom_SciFiFabric07_512_normal.jpg" id="fabric3_normal" alt="">
+      <img src="/assets/img/fabric3/TexturesCom_SciFiFabric07_512_roughness.jpg" id="fabric3_roughness" alt="">
+      <img src="/assets/img/fabric3/TexturesCom_SciFiFabric07_512_ao.jpg" id="fabric3_ao" alt="">
 
       <img src="/assets/img/bricks/TexturesCom_Bricks_Industrial4_3.25x3.25_512_albedo.jpg" alt="" id="bricks_texture">
       <img src="/assets/img/bricks/TexturesCom_Bricks_Industrial4_3.25x3.25_512_normal.jpg" alt="" id="bricks_normal">
@@ -136,7 +141,7 @@
       <a-mixin id="highrise_bricks" static-body material="src: #bricks_texture; repeat: 1 12;  normalMap: #bricks_normal; normalTextureRepeat: 1 12; normalScale: 3 3; ambientOcclusionMap: #bricks_ao; ambientOcclusionTextureRepeat: 1 12;"></a-mixin>
       <a-mixin id="highrise_fabric" static-body material="src: #fabric_texture; repeat: 1 24;  normalMap: #fabric_normal; normalTextureRepeat: 1 24; normalScale: 3 3; ambientOcclusionMap: #fabric_ao; ambientOcclusionTextureRepeat: 1 24;"></a-mixin>
       <a-mixin id="highrise_fabric2" static-body material="src: #fabric2_texture; repeat: 1 48;  normalMap: #fabric2_normal; normalTextureRepeat: 1 48; normalScale: 3 3; ambientOcclusionMap: #fabric2_ao; ambientOcclusionTextureRepeat: 1 48;"></a-mixin>
-    
+      <a-mixin id="mark" static-body material="color: #bda800; transparent: true; opacity: 0.9; src: #fabric3_texture; repeat: 10 120;  normalMap: #fabric3_normal; normalTextureRepeat: 10 120; normalScale: 3 3; ambientOcclusionMap: #fabric3_ao; ambientOcclusionTextureRepeat: 10 120; "></a-mixin>
     </a-assets>
 
     <!-- Camera Rig and controllers -->
@@ -155,10 +160,10 @@
 
 
     <!-- Ligths -->
-    <a-entity light="type: directional; color: #ffffff; intensity: 0.1; castShadow:true;" position="31 150 -50">
-    </a-entity>
-    <a-entity light="type: directional; color: #ffffff; intensity: 0.3; " position="31 500 -500">
-    </a-entity>
+    <a-entity light="type: directional; color: #ffffff; intensity: 0.1; castShadow:true;" position="31 150 -50"> </a-entity>
+
+    <a-entity light="type: directional; color: #ffffff; intensity: 0.3; " position="31 500 -500"></a-entity>
+
     <a-entity light="type: ambient; color: #CCC; intensity: 0.2; "></a-entity>
     
     <!-- <a-entity light="type: directional; color: #ffffff; intensity: 0.1; castShadow:true;" position="31 -500 -50"> -->
@@ -194,19 +199,22 @@
 
 
 <!-- Buildings and background sounds -->
-<a-box mixin="highrise" height="100" width="20" depth="20" position="350 50 350"></a-box>
+<a-box mixin="mark" height="100" width="20" depth="20" position="-50 50 500"></a-box>
+<a-sound src="#whale" id="bg_sound2" position="-50 0 500" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
+
+<a-box mixin="mark" height="100" width="20" depth="20" position="350 50 350"></a-box>
 <a-sound src="#eyno" id="bg_sound2" position="350 0 350" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
 
-<a-box mixin="highrise" height="100" width="20" depth="20" position="500 50 100"></a-box>
+<a-box mixin="mark" height="100" width="20" depth="20" position="500 50 100"></a-box>
 <a-sound src="#heart" id="bg_sound2" position="500 0 100" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
 
-<a-box mixin="highrise" height="100" width="20" depth="20" position="-50 50 500"></a-box>
+<a-box mixin="mark" height="100" width="20" depth="20" position="-50 50 500"></a-box>
 <a-sound src="#monk" id="bg_sound2" position="-50 0 500" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
 
-<a-box mixin="highrise" height="100" width="20" depth="20" position="-50 50 -500"></a-box>
+<a-box mixin="mark" height="100" width="20" depth="20" position="-50 50 -500"></a-box>
 <a-sound src="#germ" id="bg_sound2" position="-50 0 -500" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
 
-<a-box mixin="highrise" height="100" width="20" depth="20" position="-600 50 50"></a-box>
+<a-box mixin="mark" height="100" width="20" depth="20" position="-600 50 50"></a-box>
 <a-sound src="#micro" id="bg_sound2" position="-600 0 50" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
 
 <a-box id="model_bricks" mixin="highrise_bricks" height="100" width="20" depth="20" position="600 50 50" class="building" ></a-box>
@@ -215,7 +223,7 @@
 <a-box id="model_bricks" mixin="highrise_bricks" height="100" width="20" depth="20" position="50 50 600" class="building" ></a-box>
 <a-sound src="#am" id="bg_sound2" position="50 0 600" autoplay="true" loop="true" distanceModel="linear" volume="3" refDistance="15"></a-sound>
   
-<a-box id="model_bricks" mixin="highrise_bricks" height="100" width="20" depth="20" position="-50 50 50" class="building" ></a-box>
+<a-box id="model_bricks" mixin="mark" height="100" width="20" depth="20" position="-50 50 50" class="building" ></a-box>
 <a-sound src="#cats" id="bg_sound2" position="-50 0 50" autoplay="true" loop="true" distanceModel="linear" volume="3" ></a-sound>
   
 <a-box id="model_fabric" mixin="highrise_fabric" height="200" width="20" depth="20" position="250 50 0" class="building"></a-box>
