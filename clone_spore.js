@@ -14,7 +14,7 @@ AFRAME.registerComponent('clone_spore', {
       };
     }
     function randomRadius() {
-      let radius = Math.floor(Math.random() * (4 - 0.2 + 1)) + 0.2
+      let radius = Math.floor(Math.random() * (12 - 0.2 + 1)) + 0.2
       return radius;
 
     }

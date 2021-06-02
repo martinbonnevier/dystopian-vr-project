@@ -10,7 +10,7 @@
   <meta name="google-site-verification" content="JY1Nr7yREtpSaiDrGrlNBK-tyMLl2qN3UpEPxxD6caY" />
   <link rel="shortcut icon" href="/favicon.png">
 
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
   <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
@@ -18,12 +18,12 @@
   <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
   <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
   <script src="collide.js"></script>
-  <script src="play_sounds.js"></script>
+  <!-- <script src="play_sounds.js"></script> -->
   <script src="clone_spore.js"></script>
   <script src="distanceToSound.js"></script>
   <script src="clone_highrise.js"></script>
   <script src="set_numbers.js"></script>
-  <script src="play_video.js"></script>
+  <!-- <script src="play_video.js"></script> -->
 </head>
 
 <body>
@@ -65,7 +65,7 @@
       <!-- 3d-models -->
       <a-asset-item src="/assets/3d-models/sphere.gltf" id="cave"></a-asset-item>
       <a-asset-item src="/assets/3d-models/seed_mini.gltf" id="seed_mini"></a-asset-item>
-      <a-asset-item src="/assets/3d-models/ickmon_gold_.glb" id="dodi"></a-asset-item>
+      <a-asset-item src="/assets/3d-models/ickmon.gltf" id="dodi"></a-asset-item>
       <a-asset-item src="/assets/3d-models/meteor.gltf" id="meteor"></a-asset-item>
       <a-asset-item src="/assets/3d-models/old_robo.gltf" id="crawler"></a-asset-item>      
       <a-asset-item src="/assets/3d-models/flying.gltf" id="swimmer"></a-asset-item>
@@ -145,7 +145,7 @@
     </a-assets>
 
     <!-- Camera Rig and controllers -->
-    <a-entity id="cameraRig" movement-controls="speed: 10" kinematic-body rotation="0 -270 0" width="1000" height="1000" position="800 0 0">
+    <a-entity id="cameraRig" movement-controls="speed: 1" kinematic-body rotation="0 -270 0" width="1000" height="1000" position="800 0 0">
       <a-entity id="head" camera position="0 3.6 0" look-controls="pointerLockEnabled: true">
         <a-sound src="#wind" autoplay="true"
           position="0 0 0" loop="true" volume="0.5"></a-sound>
@@ -288,7 +288,7 @@
       <a-curve-point position="700 200 0" curve-point="" visible="true"></a-curve-point>
     </a-curve>
 
-    <a-sound position="200 0 0" play-audio set_nr></a-sound>
+    <a-sound position="200 0 0" set_nr></a-sound>
 
     <!-- <a-videosphere src="#running_man" loop="true" position="700 50 0" radius="3" dynamic-body></a-videosphere> -->
     
