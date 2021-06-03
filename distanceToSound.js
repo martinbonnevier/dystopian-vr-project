@@ -1,20 +1,14 @@
 
 
+//Function for stopping background sounds/music when user moves out of range (60 m:s)
+
 AFRAME.registerComponent('distance_to_sound', {
 
   init: function () {
     this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
   },
 
-  update: function () {
-    // Do something when component's data is updated.
-  },
-
-  remove: function () {
-    // Do something the component or its entity is detached.
-  },
-
-  tick: function (time, timeDelta) {
+   tick: function (time, timeDelta) {
     var camera = document.querySelector('#cameraRig');
     var soundSources = document.querySelectorAll('#bg_sound2');
     for(let i = 0; i < soundSources.length; i++){

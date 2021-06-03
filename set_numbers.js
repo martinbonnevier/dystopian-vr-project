@@ -1,7 +1,7 @@
 AFRAME.registerComponent('set_nr', {
   init: function () {
 
- // Parse number of buildings and balls from form on index.html. Also checks if entered values are numbers and in the specified range.
+ // Function for parsing number of buildings and balls from form on index.html. Also checks if entered values are numbers and in the specified range.
       const url = document.URL;    
       const sub = url.substr(url.indexOf('=')+1, url.length);
       let nrOfBuildings = sub.substr(0, sub.indexOf('balls')-1);
@@ -16,8 +16,6 @@ AFRAME.registerComponent('set_nr', {
       divBuildings.textContent = nrOfBuildings.toString();
       const divBalls = document.querySelector('#nr_of_balls');
       divBalls.textContent = nrOfBalls.toString();
-  
-      // alert(nrOfBuildings);    
-      // alert(nrOfBalls);
+
   }
 }); 

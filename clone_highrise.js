@@ -1,3 +1,5 @@
+//Function for cloning sky scrapers
+
 AFRAME.registerComponent('clone_highrise', {
   schema: {
     
@@ -24,7 +26,7 @@ AFRAME.registerComponent('clone_highrise', {
       const soundEl = document.querySelector('.sound_hr');
       let clone = {};
           
-      const randomPos = randomPosition(600, -600)
+      const randomPos = randomPosition(600, -600);
 
       if(counter === 1){
         clone = highRiseEl.cloneNode();

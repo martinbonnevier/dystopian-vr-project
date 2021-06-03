@@ -1,3 +1,5 @@
+//Function for cloning sky balls
+
 AFRAME.registerComponent('clone_spore', {
   schema: {
     
@@ -18,20 +20,21 @@ AFRAME.registerComponent('clone_spore', {
       return radius;
 
     }
+
     
     function createSpore(){
       const sceneEl = document.querySelector('a-scene');
-      const sporeEl = document.getElementById('spore');
-      const clone = sporeEl.cloneNode()
-      clone.setAttribute("dynamic-body", "")
-      clone.setAttribute("position", randomPosition(800, -800))
-      clone.setAttribute("radius", randomRadius())
-
+      const sporeEl = document.getElementById('spore');      
+      const clone = sporeEl.cloneNode();
+      clone.setAttribute("dynamic-body", "");
+      clone.setAttribute("position", randomPosition(800, -800));
+      clone.setAttribute("radius", randomRadius());     
       sceneEl.appendChild(clone);
- 
+      
     }
     for(let i=0 ; i<nrOfBalls; i++){
       createSpore();
+
     }
   }
 });
