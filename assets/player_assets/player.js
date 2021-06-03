@@ -10,10 +10,10 @@ const progressBar = document.querySelector('#progress-bar'); // element where pr
 let pPause = document.querySelector('#play-pause'); // element where play and pause image appears
 
 songIndex = 0;
-songs = ['/assets/player_assets/music/eyno.mp3', '/assets/player_assets/music/ickmon.mp3', '/assets/player_assets/music/gajd.mp3', '/assets/player_assets/music/tansky.mp3', '/assets/player_assets/music/cmon.mp3']; // object storing paths for audio objects
+songs = ['/assets/player_assets/music/eyno.mp3', '/assets/player_assets/music/ickmon.mp3', '/assets/player_assets/music/gajd.mp3', '/assets/player_assets/music/Tansky.mp3', '/assets/player_assets/music/cmon.mp3']; // object storing paths for audio objects
 thumbnails = ['/assets/player_assets/images/1.png', '/assets/player_assets/images/2.png', '/assets/player_assets/images/3.png', '/assets/player_assets/images/4.png', '/assets/player_assets/images/5.png']; // object storing paths for album covers and backgrounds
 songArtists = ['Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier']; // object storing track artists
-songTitles = ["eyno", "ickmon", "gajd", "tansky", "cmon"]; // object storing track titles
+songTitles = ["01. eyno", "02. ickmon", "03. gajd", "04. tansky", "05. cmon"]; // object storing track titles
 
 // function where pp (play-pause) element changes based on playing boolean value - if play button clicked, change pp.src to pause button and call song.play() and vice versa.
 let playing = true;
